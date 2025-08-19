@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meet the dedicated team at Wilsster Agribusiness Center driving agricultural innovation in Uganda.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Wilsster Agribusiness Center - Our Team</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <style>
+        /* Additional green-themed styles for the team page */
+        .team-intro {
+            background-color: #f9fbf7;
+            position: relative;
+        }
+        
+        .team-intro p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .leadership-team {
+            background-color: #ffffff;
+        }
+        
+        .leadership-team h2, 
+        .technical-team h2, 
+        .team-culture h2,
+        .join-team h2 {
+            color: #2E7D32;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .leadership-team h2:after, 
+        .technical-team h2:after, 
+        .team-culture h2:after,
+        .join-team h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #8BC34A;
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .team-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(46, 125, 50, 0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid #8BC34A;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(46, 125, 50, 0.2);
+        }
+        
+        .team-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(139, 195, 74, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+            z-index: 1;
+        }
+        
+        .team-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #e8f5e9;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .team-card:hover img {
+            border-color: #2E7D32;
+            transform: scale(1.05);
+        }
+        
+        .team-card h3 {
+            color: #2E7D32;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .team-card p:first-of-type {
+            color: #689F38;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .team-card p:last-of-type {
+            color: #555;
+            margin-bottom: 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .technical-team {
+            background-color: #f5f9f5;
+        }
+        
+        .technical-team p {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            color: #555;
+        }
+        
+        .technical-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .technical-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(46, 125, 50, 0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid #8BC34A;
+        }
+        
+        .technical-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(46, 125, 50, 0.2);
+        }
+        
+        .technical-card h3 {
+            color: #2E7D32;
+            margin-bottom: 1rem;
+        }
+        
+        .team-culture {
+            background-color: #ffffff;
+        }
+        
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .culture-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(46, 125, 50, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+            border-bottom: 4px solid #8BC34A;
+        }
+        
+        .culture-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(46, 125, 50, 0.2);
+        }
+        
+        .culture-card h3 {
+            color: #2E7D32;
+            margin-bottom: 1rem;
+        }
+        
+        .join-team {
+            background-color: #f5f9f5;
+            text-align: center;
+        }
+        
+        .join-team p {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: #555;
+        }
+        
+        .job-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .job-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(46, 125, 50, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 2px solid #e8f5e9;
+        }
+        
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(46, 125, 50, 0.2);
+            border-color: #8BC34A;
+        }
+        
+        .job-card h3 {
+            color: #2E7D32;
+            margin-bottom: 0.5rem;
+        }
+        
+        .job-card p {
+            color: #689F38;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .cta {
+            background: linear-gradient(rgba(46, 125, 50, 0.9), rgba(46, 125, 50, 0.9)), url('/images/farm-team.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            color: white;
+        }
+        
+        .cta p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .cta-buttons .btn {
+            background-color: white;
+            color: #2E7D32;
+        }
+        
+        .cta-buttons .btn:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .cta-buttons .btn.secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .cta-buttons .btn.secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>WILSSTER AGRIBUSINESS CENTER</h1>
+                <p>Bridging the Gap</p>
+            </div>
+            <button class="mobile-menu" aria-label="Toggle mobile menu">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="team.html" class="active">Our Team</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h2>Meet Our Team</h2>
+            <p>The dedicated professionals driving our agricultural vision forward.</p>
+        </div>
+    </section>
+
+    <section class="team-intro section-padding">
+        <div class="container">
+            <p>At Wilsster Agribusiness Center, our strength lies in our team of experienced professionals who are passionate about transforming agriculture. Each member brings unique expertise and commitment to our mission of bridging gaps in the agricultural sector.</p>
+        </div>
+    </section>
+
+    <section class="leadership-team section-padding">
+        <div class="container">
+            <h2>Leadership Team</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="images/CEO.jpg" alt="Titus Timbigamba, CEO" loading="lazy">
+                    <h3>Titus Timbigamba</h3>
+                    <p>Chief Executive Officer</p>
+                    <p>With over 15 years in agribusiness management, Titus provides strategic direction and leadership for the company. His vision drives our innovation and growth.</p>
+                </div>
+                <div class="team-card">
+                    <img src="images/CEO.jpg" alt="Tinyefuza Thomas, General Manager" loading="lazy">
+                    <h3>Tinyefuza Thomas</h3>
+                    <p>General Manager</p>
+                    <p>Thomas oversees daily operations with a focus on efficiency and quality. His hands-on approach ensures smooth execution of all our services.</p>
+                </div>
+                <div class="team-card">
+                    <img src="images/CEO.jpg" alt="Wilson Tibegaya, Manager" loading="lazy">
+                    <h3>Wilson Tibegaya</h3>
+                    <p>Manager</p>
+                    <p>Wilson coordinates our field operations and client services. His technical expertise in livestock management ensures high standards across our projects.</p>
+                </div>
+                <div class="team-card">
+                    <img src="images/CEO.jpg" alt="Esther Mirembe, Financial Advisor" loading="lazy">
+                    <h3>Esther Mirembe</h3>
+                    <p>Financial Advisor</p>
+                    <p>Esther manages our financial strategy and ensures sustainable growth. Her expertise helps farmers and partners maximize their agricultural investments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="technical-team section-padding">
+        <div class="container">
+            <h2>Technical Team</h2>
+            <p>Our team of veterinarians, animal scientists, and agricultural experts provide the technical backbone for all our services and projects.</p>
+            <div class="technical-grid">
+                <div class="technical-card">
+                    <h3>Veterinary Services</h3>
+                    <p>Led by Dr. Sarah K., our veterinary team includes 5 qualified veterinarians and 10 veterinary technicians providing round-the-clock care and emergency services.</p>
+                </div>
+                <div class="technical-card">
+                    <h3>Animal Production</h3>
+                    <p>Our animal scientists and breeding specialists ensure the highest quality genetics and management practices for all our livestock projects.</p>
+                </div>
+                <div class="technical-card">
+                    <h3>Farm Management</h3>
+                    <p>Experienced farm managers and agronomists oversee our operations and provide consulting services to partner farmers.</p>
+                </div>
+                <div class="technical-card">
+                    <h3>Training & Extension</h3>
+                    <p>Our extension officers conduct farmer training programs and provide ongoing support to ensure successful implementation of best practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-culture section-padding">
+        <div class="container">
+            <h2>Our Team Culture</h2>
+            <div class="culture-grid">
+                <div class="culture-card">
+                    <h3>Collaboration</h3>
+                    <p>We work together across disciplines to deliver comprehensive solutions.</p>
+                </div>
+                <div class="culture-card">
+                    <h3>Continuous Learning</h3>
+                    <p>We invest in ongoing training and stay updated with the latest agricultural advancements.</p>
+                </div>
+                <div class="culture-card">
+                    <h3>Passion</h3>
+                    <p>We're driven by a genuine love for agriculture and its potential to transform lives.</p>
+                </div>
+                <div class="culture-card">
+                    <h3>Results Focus</h3>
+                    <p>We measure our success by the tangible impact we create for farmers and communities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="join-team section-padding">
+        <div class="container">
+            <h2>Join Our Team</h2>
+            <p>We're always looking for passionate individuals to join our growing team. If you share our commitment to agricultural excellence, we'd love to hear from you.</p>
+            <div class="job-grid">
+                <div class="job-card">
+                    <h3>Veterinary Officer</h3>
+                    <p>Full-time | Kampala with field assignments</p>
+                    <a href="contact.html" class="btn">Apply Now</a>
+                </div>
+                <div class="job-card">
+                    <h3>Farm Manager</h3>
+                    <p>Full-time | Kazo District</p>
+                    <a href="contact.html" class="btn">Apply Now</a>
+                </div>
+                <div class="job-card">
+                    <h3>Agricultural Extension Officer</h3>
+                    <p>Contract | Multiple Locations</p>
+                    <a href="contact.html" class="btn">Apply Now</a>
+                </div>
+            </div>
+            <p>Don't see your perfect role? We still want to hear from you!</p>
+            <a href="contact.html" class="btn secondary">Send Us Your CV</a>
+        </div>
+    </section>
+
+    <section class="cta section-padding">
+        <div class="container">
+            <h2>Have Questions for Our Team?</h2>
+            <p>Our experts are ready to provide the guidance and support you need for your agricultural ventures.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn">Contact Us</a>
+                <a href="services.html" class="btn secondary">Explore Services</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>Wilsster Agribusiness Center</h3>
+                    <p>Bridging the gap in agricultural services through innovation, quality, and sustainability.</p>
+                   <div class="social-links">
+    <a href="https://facebook.com/wilssteragribusiness" class="fab fa-facebook-f" aria-label="Facebook"></a>
+    <a href="https://twitter.com/wilssteragri" class="fab fa-twitter" aria-label="Twitter"></a>
+    <a href="https://linkedin.com/company/wilssteragribusiness" class="fab fa-linkedin-in" aria-label="LinkedIn"></a>
+    <a href="https://youtube.com/wilssteragribusiness" class="fab fa-youtube" aria-label="YouTube"></a>
+    <a href="https://instagram.com/wilssteragribusiness" class="fab fa-instagram" aria-label="Instagram"></a>
+</div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="services.html#contract-farming">Contract Farming</a></li>
+                        <li><a href="services.html#breeding-stock">Breeding Stock</a></li>
+                        <li><a href="services.html#veterinary-services">Veterinary Services</a></li>
+                        <li><a href="services.html#farm-visits">Farm Visits & Expos</a></li>
+                        <li><a href="services.html#emergency-vet">Emergency Vet Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fa fa-map-marker"></i> Kulambiro-Matayo Close, Plot 1628 - Block 218</p>
+                    <p><i class="fa fa-phone"></i> +256-7683-03598</p>
+                    <p><i class="fa fa-phone"></i> +256-7618-89884</p>
+                    <p><i class="fa fa-phone"></i> +256-7065-59811</p>
+                    <p><i class="fa fa-envelope"></i> <a href="mailto:info@wilssteragribusiness.com">info@wilssteragribusiness.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> Wilsster Agribusiness Center. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

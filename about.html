@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Wilsster Agribusiness Center's mission, vision, and values in transforming agriculture in Uganda.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Wilsster Agribusiness Center - About Us</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <style>
+        /* Additional green-themed styles for the about page */
+        .about-intro {
+            background-color: #f9fbf7;
+            position: relative;
+        }
+        
+        .about-intro h2 {
+            color: #2E7D32;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .about-intro h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #8BC34A;
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        .about-intro p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-image {
+            margin: 2rem 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(46, 125, 50, 0.2);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .mission-vision-full {
+            background-color: #ffffff;
+        }
+        
+        .mission-vision-full .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .mission, .vision {
+            background: white;
+            border-radius: 10px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(46, 125, 50, 0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid #8BC34A;
+            text-align: center;
+        }
+        
+        .mission:hover, .vision:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(46, 125, 50, 0.2);
+        }
+        
+        .mission h2, .vision h2 {
+            color: #2E7D32;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .mission h2:after, .vision h2:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #8BC34A;
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        .mission p, .vision p {
+            font-style: italic;
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .objectives {
+            background-color: #f5f9f5;
+        }
+        
+        .objectives h2 {
+            color: #2E7D32;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .objectives h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #8BC34A;
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        .objective-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .objective-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(46, 125, 50, 0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid #8BC34A;
+        }
+        
+        .objective-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(46, 125, 50, 0.2);
+        }
+        
+        .objective-card h3 {
+            color: #2E7D32;
+            margin-bottom: 1rem;
+        }
+        
+        .objective-card p {
+            color: #555;
+        }
+        
+        .core-values {
+            background-color: #ffffff;
+        }
+        
+        .core-values h2 {
+            color: #2E7D32;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .core-values h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #8BC34A;
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .value-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(46, 125, 50, 0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid #8BC34A;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(46, 125, 50, 0.2);
+        }
+        
+        .value-card h3 {
+            color: #2E7D32;
+            margin-bottom: 1rem;
+        }
+        
+        .value-card p {
+            color: #555;
+        }
+        
+        .cta {
+            background: linear-gradient(rgba(46, 125, 50, 0.9), rgba(46, 125, 50, 0.9)), url('/images/farm-team.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            color: white;
+        }
+        
+        .cta p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .cta-buttons .btn {
+            background-color: white;
+            color: #2E7D32;
+        }
+        
+        .cta-buttons .btn:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .cta-buttons .btn.secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .cta-buttons .btn.secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>WILSSTER AGRIBUSINESS CENTER</h1>
+                <p>Bridging the Gap</p>
+            </div>
+            <button class="mobile-menu" aria-label="Toggle mobile menu">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h2>About Wilsster Agribusiness Center</h2>
+            <p>Learn about our mission, vision, and the values that drive our agricultural services.</p>
+        </div>
+    </section>
+
+    <section class="about-intro section-padding">
+        <div class="container">
+            <div class="about-content">
+                <h2>Who We Are</h2>
+                <p>Wilsster Agribusiness Center is a leading agricultural service provider dedicated to transforming farming practices in Uganda and beyond. Founded with the vision of bridging gaps in the agricultural sector, we provide comprehensive solutions to farmers, agribusinesses, and communities.</p>
+                <p>Our company was established to address the challenges faced by both young and experienced farmers, particularly in accessing quality inputs, knowledge, and markets. We combine traditional farming wisdom with modern agricultural technologies to deliver exceptional results for our clients.</p>
+                <div class="about-image">
+                    <img src="images/cow.jpeg" alt="Wilsster Agribusiness Center farm" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission-vision-full section-padding">
+        <div class="container">
+            <div class="mission">
+                <h2>Our Mission</h2>
+                <p>"To provide high-quality agricultural products and services, enhancing the lives of farmers, customers, and communities, while promoting sustainable agricultural practices."</p>
+            </div>
+            <div class="vision">
+                <h2>Our Vision</h2>
+                <p>"To become a leading agribusiness company, driving innovation, sustainability, and excellence in the agricultural sector, and contributing to food security and economic growth."</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="objectives section-padding">
+        <div class="container">
+            <h2>Our Objectives</h2>
+            <div class="objective-grid">
+                <div class="objective-card">
+                    <h3>Increase Productivity</h3>
+                    <p>Improve crop yields, reduce waste, and optimize resources to enhance profitability.</p>
+                </div>
+                <div class="objective-card">
+                    <h3>Enhance Satisfaction</h3>
+                    <p>Provide high-quality products and services, ensuring customer needs are met and exceeded.</p>
+                </div>
+                <div class="objective-card">
+                    <h3>Promote Sustainability</h3>
+                    <p>Implement environmentally friendly practices and promote eco-friendly technologies.</p>
+                </div>
+                <div class="objective-card">
+                    <h3>Support Farmers</h3>
+                    <p>Provide training, resources, and support to farmers to improve their livelihoods.</p>
+                </div>
+                <div class="objective-card">
+                    <h3>Foster Innovation</h3>
+                    <p>Stay up-to-date with the latest agricultural technologies and invest in research.</p>
+                </div>
+                <div class="objective-card">
+                    <h3>Expand Reach</h3>
+                    <p>Develop strategic partnerships and explore new markets to drive business growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="core-values section-padding">
+        <div class="container">
+            <h2>Our Core Values</h2>
+            <div class="value-grid">
+                <div class="value-card">
+                    <h3>Efficiency</h3>
+                    <p>We Maximize productivity by optimizing resources, time, and effort to achieve the best results with minimal waste..</p>
+                </div>
+                <div class="value-card">
+                    <h3>Transparency</h3>
+                    <p>We Operate openly with clear communication, honesty, and visibility in processes and decision-making.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Innovation</h3>
+                    <p>We embrace creativity and new technologies to solve agricultural challenges.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Accountability</h3>
+                    <p>We Take responsibility for actions, decisions, and outcomes, ensuring integrity and ownership at all levels.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Teamwork</h3>
+                    <p>Collaborating effectively, leveraging diverse strengths, and fostering a supportive environment to achieve common goals.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Reliability/Trust</h3>
+                    <p>Consistently delivering on commitments, being dependable, and building confidence through integrity and consistency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta section-padding">
+        <div class="container">
+            <h2>Join Us in Transforming Agriculture</h2>
+            <p>Whether you're a farmer, investor, or agricultural enthusiast, there's a place for you in our mission to revolutionize farming practices.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn">Contact Us</a>
+                <a href="services.html" class="btn secondary">Explore Services</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>Wilsster Agribusiness Center</h3>
+                    <p>Bridging the gap in agricultural services through innovation, quality, and sustainability.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/wilssteragribusiness" class="fab fa-facebook-f" aria-label="Facebook"></a>
+                        <a href="https://twitter.com/wilssteragri" class="fab fa-twitter" aria-label="Twitter"></a>
+                        <a href="https://linkedin.com/company/wilssteragribusiness" class="fab fa-linkedin-in" aria-label="LinkedIn"></a>
+                        <a href="https://youtube.com/wilssteragribusiness" class="fab fa-youtube" aria-label="YouTube"></a>
+                        <a href="https://instagram.com/wilssteragribusiness" class="fab fa-instagram" aria-label="Instagram"></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="services.html#contract-farming">Contract Farming</a></li>
+                        <li><a href="services.html#breeding-stock">Breeding Stock</a></li>
+                        <li><a href="services.html#veterinary-services">Veterinary Services</a></li>
+                        <li><a href="services.html#farm-visits">Farm Visits & Expos</a></li>
+                        <li><a href="services.html#emergency-vet">Emergency Vet Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fa fa-map-marker"></i> Kulambiro-Matayo Close, Plot 1628 - Block 218</p>
+                    <p><i class="fa fa-phone"></i> +256-7683-03598</p>
+                    <p><i class="fa fa-phone"></i> +256-7618-89884</p>
+                    <p><i class="fa fa-phone"></i> +256-7065-59811</p>
+                    <p><i class="fa fa-envelope"></i> <a href="mailto:info@wilssteragribusiness.com">info@wilssteragribusiness.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> Wilsster Agribusiness Center. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
